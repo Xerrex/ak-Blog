@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>{{ title }} AK Blog</title>
+  {% if title %}
+    <title>{{ title }} AK Blog</title>
+  {% else %}
+    <title>AK Blog</title>
+  {% endif %}
+
 </head>
 <body>
     <h1> Hellow {{ user.username }}</h1>
