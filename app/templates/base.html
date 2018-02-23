@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+        <title>{{ title }} AK Blog</title>
+    {% else %}
+        <title>AK Blog</title>
+    {% endif %}
+</head>
+<body>
+    <div>AK Blog: <a href="/index">Home</a></div>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>
