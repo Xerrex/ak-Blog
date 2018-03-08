@@ -29,16 +29,7 @@ def index():
         db.session.commit()
         flash('Your post is now live!')
         return redirect(url_for('index'))
-    posts = [
-        {
-            'author': {'username': 'Nick'},
-            'body': 'My Dear Futurre wife'
-        },
-        {
-            'author': {'username': 'Gitau'},
-            'body': 'Kenya my Country'
-        }
-    ]
+    posts= current_user.followed_posts().all()
     return render_template('index.html', title='Home', user=user,
                            posts=posts, form=postform)
 
