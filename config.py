@@ -15,7 +15,12 @@ class Config(object):
     MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS') is not None
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
-    ADMINS = ['toonkagai@gmail.com']
+
+    # change line to add more Emails of admins.
+    ADMINS = os.environ.get('ADMINS')
+
+    # uncomment after getting Key
+    # MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')
 
     POSTS_PER_PAGE = 25
 
