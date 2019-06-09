@@ -41,7 +41,6 @@ if not app.debug:
         mail_handler.setLevel(logging.ERROR)
         app.logger.addHandler(mail_handler)
 
-
     if not os.path.exists('logs'):
         os.mkdir('logs')
     file_handler = RotatingFileHandler('logs/AK_blog.log', maxBytes=10240,
@@ -55,6 +54,7 @@ if not app.debug:
     app.logger.info('AK_blog startup')
 
 from app import routes, models, errors
+
 
 @babel.localeselector
 def get_locale():
