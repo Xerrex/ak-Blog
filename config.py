@@ -4,6 +4,9 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 
 class Config(object):
+    DEBUG = False
+    TESTING = False
+    CSRF_ENABLED = True
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'prepare to be amazed'
 
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
@@ -25,3 +28,25 @@ class Config(object):
     POSTS_PER_PAGE = 25
 
     LANGUAGES = ['en', 'es']
+
+
+class ProductionEnv(Config):
+    ENV = 'production'
+
+
+class DevelopmentEnv(Config):
+    DEBUG = True
+
+
+class TestingEnv(Config):
+    TESTING = True
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
+                              'sqlite:///' + os.path.join(basedir, 'app.db')
+
+
+configs_env = {
+    'production': ProductionEnv,
+    'development': DevelopmentEnv,
+    'testing': TestingEnv
+}
+
