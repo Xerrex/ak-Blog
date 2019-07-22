@@ -28,10 +28,11 @@ class Config(object):
     POSTS_PER_PAGE = 25
 
     LANGUAGES = ['en', 'es']
-
+    ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
 
 class ProductionEnv(Config):
-    ENV = 'production'
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
+                              'sqlite:///' + os.path.join(basedir, 'app.db')
 
 
 class DevelopmentEnv(Config):
@@ -40,8 +41,7 @@ class DevelopmentEnv(Config):
 
 class TestingEnv(Config):
     TESTING = True
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
-                              'sqlite:///' + os.path.join(basedir, 'app.db')
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app_testing.db')
 
 
 configs_env = {
