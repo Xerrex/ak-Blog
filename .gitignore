@@ -6,3 +6,4 @@ venv/*
 messages.pot
 .vscode/*
 logs/*
+index.py
