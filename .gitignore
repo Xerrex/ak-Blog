@@ -2,7 +2,8 @@ venv/*
 .idea/*
 .env
 *.pyc
-app.db
+*.db
 messages.pot
 .vscode/*
 logs/*
+index.py

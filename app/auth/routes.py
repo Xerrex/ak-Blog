@@ -52,7 +52,7 @@ def register():
         db.session.commit()
         flash(_('Congratulations, you are now a registered user!'))
         return redirect(url_for('auth.login'))
-    return render_template('register.html', title=_('Register'), form=reg_form)
+    return render_template('auth/register.html', title=_('Register'), form=reg_form)
 
 
 @auth_bp.route('/reset_password_request', methods=['GET', 'POST'])
@@ -66,7 +66,7 @@ def reset_password_request():
             send_password_reset_email(user)
         flash(_('Check your email for the instructions to reset your password'))
         return redirect(url_for('auth.login'))
-    return render_template('reset_password_request.html', title=_('Reset Password'),
+    return render_template('auth/reset_password_request.html', title=_('Reset Password'),
                            form=reset_password_request_form)
 
 
@@ -83,5 +83,5 @@ def reset_password(token):
         db.session.commit()
         flash(_('Your password has been reset.'))
         return redirect(url_for('auth.login'))
-    return render_template('reset_password.html', form=reset_password_form)
+    return render_template('auth/reset_password.html', form=reset_password_form)
 
