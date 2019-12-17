@@ -9,6 +9,8 @@ Simple Flask blog application made during Flask
 * **[Virtualenv](https://virtualenv.pypa.io/en/stable/)** - A tool to create isolated virtual environments
 * **[SQLITE](https://www.sqlite.org/index.html)** - Small, fast, self-contained, high-reliability, full-featured, SQL DB.
 
+* **[Vagrant](https://www.vagrantup.com/)** - Development Environments Made Easy.
+
 ## Table of contents
 * [Installation and Usage](#installation-and-usage)
 
@@ -73,6 +75,7 @@ Simple Flask blog application made during Flask
 ## Additional Information
 App contains additional languages to help with language translations
 
-* **flask translate init LANG** to add a new language. LANG is the new language.
-* **flask translate update** to update all language repositories
-* **flask translate compile** to compile all language repositories
+* **flask translate init LANG** to add a new language. LANG is the new language
+* **flask translate update** to update all language repositories.
+* **flask translate compile** to compile all language repositories.
+* **vagrant up** to create a virtual machine.
