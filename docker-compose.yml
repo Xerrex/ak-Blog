@@ -1,0 +1,43 @@
+version: "3"
+
+services:
+    dbserver:
+        image: mysql:latest
+        container_name: dbserver
+        restart: always
+        env_file: .envsql
+        ports:
+            - '3306:3306'
+
+    elasticsearch:
+        image: docker.elastic.co/elasticsearch/elasticsearch:7.5.1
+        container_name: elasticsearch
+        environment:
+            - discovery.type=single-node
+        ports:
+            - 9200:9200
+            - 9300:9300
+        volumes:
+            - esdata1:/usr/share/elasticsearch/data
+    
+    # adminer:
+    #     image: adminer:latest
+    #     container_name: adminer
+    #     restart: always
+    #     ports:
+    #         - 8080:8080
+        
+    akblog:
+        build: .
+        environment:
+            PYTHONUNBUFFERED: 'true'
+        env_file: .envapp
+        depends_on:
+        - elasticsearch
+        - dbserver
+        ports:
+        - 5000:5000
+    
+volumes:
+    esdata1:
+        driver: local
