@@ -1,5 +1,5 @@
 from flask import render_template, flash, redirect, url_for, \
-    request, g, current_app
+    request, g, current_app, jsonify
 from flask_login import current_user, login_required
 from datetime import datetime
 from flask_babel import _, get_locale

@@ -17,11 +17,11 @@
                    {{ _('%(count)d following', count=user.followed.count()) }}</p>
                 {% if user != current_user %}
                     {% if not current_user.is_following(user) %}
-                    <a href="{{ url_for('main.follow', username=user.username) }}">
+                    <a href="{{ url_for('home.follow', username=user.username) }}">
                         {{ _('Follow') }}
                     </a>
                     {% else %}
-                    <a href="{{ url_for('main.unfollow', username=user.username) }}">
+                    <a href="{{ url_for('home.unfollow', username=user.username) }}">
                         {{ _('Unfollow') }}
                     </a>
                     {% endif %}
