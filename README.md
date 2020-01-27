@@ -65,6 +65,7 @@ Simple Flask blog application which allows users to follow other users and view 
       * export MAIL_USE_TLS=1
       * export MAIL_USERNAME=your-gmail-username
       * export MAIL_PASSWORD=your-gmail-password
+      * export REDIS_URL="your-ip-address:your-port"
 
     * To change Enviroment add
       * export FLASK_DEBUG=1
@@ -133,6 +134,7 @@ Simple Flask blog application which allows users to follow other users and view 
       ```bash
       docker-compose up
       ```
+
 ## Usage
 
 * **Access the app by going to the address with your browser**

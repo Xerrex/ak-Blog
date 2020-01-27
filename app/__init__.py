@@ -11,6 +11,8 @@ from flask_mail import Mail
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 from flask_babel import Babel, lazy_gettext as _l
+from redis import Redis
+import rq
 
 
 from config import configs_env
@@ -28,6 +30,8 @@ babel = Babel()
 def create_app(env):
     app = Flask(__name__)
     app.config.from_object(configs_env[env])
+    app.redis = Redis.from_url(app.config['REDIS_URL'])
+    app.task_queue = rq.Queue('akblog-tasks', connection=app.redis)
 
     db.init_app(app)
     migrate.init_app(app, db)
