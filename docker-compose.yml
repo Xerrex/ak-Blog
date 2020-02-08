@@ -1,4 +1,4 @@
-version: "3"
+version: "3.7"
 
 services:
     dbserver:
@@ -6,38 +6,74 @@ services:
         container_name: dbserver
         restart: always
         env_file: .envsql
+        volumes:
+            - /opt/mysql_data:/var/lib/mysql
         ports:
             - '3306:3306'
+        networks: 
+            - AK-Blog-net
 
     elasticsearch:
         image: docker.elastic.co/elasticsearch/elasticsearch:7.5.1
         container_name: elasticsearch
         environment:
             - discovery.type=single-node
+        volumes:
+            - esdata1:/usr/share/elasticsearch/data
         ports:
             - 9200:9200
             - 9300:9300
-        volumes:
-            - esdata1:/usr/share/elasticsearch/data
-    
+        networks:
+            - AK-Blog-net
+
+    redis:
+        image: redis:alpine3.11
+        container_name: redis
+        ports:
+            - 6379:6379
+        networks:
+            - AK-Blog-net
+
     # adminer:
     #     image: adminer:latest
     #     container_name: adminer
     #     restart: always
     #     ports:
     #         - 8080:8080
-        
+
     akblog:
         build: .
+        image: akblog:latest
+        container_name: akblog
         environment:
             PYTHONUNBUFFERED: 'true'
         env_file: .envapp
         depends_on:
-        - elasticsearch
-        - dbserver
+            - elasticsearch
+            - dbserver
         ports:
-        - 5000:5000
-    
+            - 8000:5000
+        networks:
+            - AK-Blog-net
+
+    rq-worker:
+        build: .
+        image: rq-worker:latest
+        container_name: rq-worker
+        env_file: .envapp
+        entrypoint: "venv/bin/rq worker -u redis://redis:6379/0 AK-Blog-tasks"
+        depends_on: 
+            - akblog
+            - redis
+        restart: always
+        networks: 
+            - AK-Blog-net
+
 volumes:
     esdata1:
         driver: local
+
+networks: 
+    AK-Blog-net:
+        driver: bridge
+        name: AK-Blog-net
