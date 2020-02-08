@@ -97,7 +97,7 @@ Simple Flask blog application which allows users to follow other users and view 
     MYSQL_RANDOM_ROOT_PASSWORD=yes
     MYSQL_DATABASE=akblog
     MYSQL_USER=akblog
-    MYSQL_PASSWORD=your-db-pass
+    MYSQL_PASSWORD="your-db-pass"
     ```
 
   * **.envapp**
@@ -115,6 +115,7 @@ Simple Flask blog application which allows users to follow other users and view 
     MAIL_USE_TLS=1
     MAIL_USERNAME=your-gmail-username #optional
     MAIL_PASSWORD=your-gmail-password #optional
+    REDIS_URL="redis://redis:6379/0"
     ```
 
     * remove optional lines if not using.
@@ -139,7 +140,8 @@ Simple Flask blog application which allows users to follow other users and view 
 
 * **Access the app by going to the address with your browser**
 
-  [http://0.0.0.0:5000](http://0.0.0.0:5000)
+  * [http://0.0.0.0:5000](http://0.0.0.0:5000)
+  * [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
 * **To view database changes**
   * Uncomment the adminer part of the docker-compose.yml file
@@ -155,8 +157,9 @@ Simple Flask blog application which allows users to follow other users and view 
 
   * head over to this address with your browser.
 
-    [http://0.0.0.0:8080](http://0.0.0.0:8080)
-  
+    * [http://0.0.0.0:8080](http://0.0.0.0:8080)
+    * [http://127.0.0.1:8080](htpp://127.0.0.1:8080)
+
   * Use the same login credentials as defined in **.envsql**
 
 ## Additional Information
