@@ -1,11 +1,11 @@
 import os
-from app import create_app, cli, db
-from app.models import User, Post, Message, Notification, Task
+from my_core.app import create_app
+from my_core.utils.extensions import db
+from my_core.models import User, Post, Message, \
+        Notification, Task
 
-app_environment = os.getenv('FLASK_CONFIG') or 'production'
-app = create_app(app_environment)
-
-cli.register(app)
+env_config = os.getenv('FLASK_CONFIG') or 'prod'
+app = create_app(env_config)
 
 @app.shell_context_processor
 def make_shell_context():
@@ -18,3 +18,6 @@ def make_shell_context():
         'Task': Task
     }
     return models
+
+if __name__ == '__main__':
+    app.run()
