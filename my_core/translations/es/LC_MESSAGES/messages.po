@@ -1,0 +1,318 @@
+# Spanish translations for PROJECT.
+# Copyright (C) 2021 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2021-06-30 18:57+0300\n"
+"PO-Revision-Date: 2021-06-30 18:59+0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: core/auth/email.py:8
+msgid "[AKblog] Reset Your Password"
+msgstr ""
+
+#: core/auth/forms.py:10 core/auth/forms.py:17 core/home/forms.py:11
+msgid "Username"
+msgstr ""
+
+#: core/auth/forms.py:11 core/auth/forms.py:20 core/auth/forms.py:42
+msgid "Password"
+msgstr ""
+
+#: core/auth/forms.py:12
+msgid "Remember Me"
+msgstr ""
+
+#: core/auth/forms.py:13 core/auth/routes.py:34
+#: core/templates/auth/login.html:5
+msgid "Sign In"
+msgstr ""
+
+#: core/auth/forms.py:18 core/auth/forms.py:37
+msgid "Email"
+msgstr ""
+
+#: core/auth/forms.py:21
+msgid "Confirm Password"
+msgstr ""
+
+#: core/auth/forms.py:23 core/auth/routes.py:55
+#: core/templates/auth/register.html:5
+msgid "Register"
+msgstr ""
+
+#: core/auth/forms.py:28 core/home/forms.py:32
+msgid "Please use a different username."
+msgstr ""
+
+#: core/auth/forms.py:33
+msgid "Please use a different email address."
+msgstr ""
+
+#: core/auth/forms.py:38 core/auth/forms.py:45
+msgid "Request Password Reset"
+msgstr ""
+
+#: core/auth/forms.py:43
+msgid "Repeat Password"
+msgstr ""
+
+#: core/auth/routes.py:25
+msgid "Invalid username or password"
+msgstr ""
+
+#: core/auth/routes.py:53
+msgid "Congratulations, you are now a registered user!"
+msgstr ""
+
+#: core/auth/routes.py:68
+msgid "Check your email for the instructions to reset your password"
+msgstr ""
+
+#: core/auth/routes.py:70 core/templates/auth/reset_password_request.html:5
+msgid "Reset Password"
+msgstr ""
+
+#: core/auth/routes.py:85
+msgid "Your password has been reset."
+msgstr ""
+
+#: core/home/forms.py:12
+msgid "About me"
+msgstr ""
+
+#: core/home/forms.py:13 core/home/forms.py:38 core/home/forms.py:55
+msgid "Submit"
+msgstr ""
+
+#: core/home/forms.py:36
+msgid "Say something"
+msgstr ""
+
+#: core/home/forms.py:42 core/home/routes.py:163
+msgid "Search"
+msgstr ""
+
+#: core/home/forms.py:53
+msgid "Message"
+msgstr ""
+
+#: core/home/routes.py:41
+msgid "Your post is now live!"
+msgstr ""
+
+#: core/home/routes.py:54 core/templates/base.html:25
+msgid "Home"
+msgstr ""
+
+#: core/home/routes.py:82
+msgid "Your changes have been saved."
+msgstr ""
+
+#: core/home/routes.py:87 core/templates/home/edit_profile.html:5
+msgid "Edit Profile"
+msgstr ""
+
+#: core/home/routes.py:96 core/home/routes.py:112
+#, python-format
+msgid "User %(username)s not found."
+msgstr ""
+
+#: core/home/routes.py:99
+msgid "You cannot follow yourself!"
+msgstr ""
+
+#: core/home/routes.py:103
+#, python-format
+msgid "You are following %(username)s!"
+msgstr ""
+
+#: core/home/routes.py:115
+msgid "You cannot unfollow yourself!"
+msgstr ""
+
+#: core/home/routes.py:119
+#, python-format
+msgid "You are not following %(username)s."
+msgstr ""
+
+#: core/home/routes.py:137 core/templates/base.html:26
+msgid "Explore"
+msgstr ""
+
+#: core/home/routes.py:185
+msgid "Your message has been sent."
+msgstr ""
+
+#: core/home/routes.py:187
+msgid "Send Message"
+msgstr ""
+
+#: core/home/routes.py:226
+msgid "An export task is currently in progress"
+msgstr ""
+
+#: core/home/routes.py:228
+msgid "Exporting posts..."
+msgstr ""
+
+#: core/templates/base.html:7
+msgid "Welcome to AK blog"
+msgstr ""
+
+#: core/templates/base.html:39
+msgid "Login"
+msgstr ""
+
+#: core/templates/base.html:43 core/templates/messages.html:4
+msgid "Messages"
+msgstr ""
+
+#: core/templates/base.html:56
+msgid "Profile"
+msgstr ""
+
+#: core/templates/base.html:61
+msgid "Logout"
+msgstr ""
+
+#: core/templates/base.html:115
+msgid "Error: Could not contact server."
+msgstr ""
+
+#: core/templates/messages.html:12
+msgid "Newer messages"
+msgstr ""
+
+#: core/templates/messages.html:17
+msgid "Older messages"
+msgstr ""
+
+#: core/templates/search.html:4
+msgid "Search Results"
+msgstr ""
+
+#: core/templates/search.html:13
+msgid "Previous results"
+msgstr ""
+
+#: core/templates/search.html:18
+msgid "Next results"
+msgstr ""
+
+#: core/templates/send_message.html:5
+#, python-format
+msgid "Send Message to %(recipient)s"
+msgstr ""
+
+#: core/templates/home/user.html:11 core/templates/user_popup.html:13
+msgid "Last seen on"
+msgstr ""
+
+#: core/templates/home/user.html:14 core/templates/user_popup.html:16
+#, python-format
+msgid "%(count)d followers"
+msgstr ""
+
+#: core/templates/home/user.html:15 core/templates/user_popup.html:17
+#, python-format
+msgid "%(count)d following"
+msgstr ""
+
+#: core/templates/home/user.html:35 core/templates/user_popup.html:21
+msgid "Follow"
+msgstr ""
+
+#: core/templates/home/user.html:42 core/templates/user_popup.html:25
+msgid "Unfollow"
+msgstr ""
+
+#: core/templates/auth/login.html:12
+msgid "New User?"
+msgstr ""
+
+#: core/templates/auth/login.html:12
+msgid "Click to Register!"
+msgstr ""
+
+#: core/templates/auth/login.html:14
+msgid "Forgot Your Password?"
+msgstr ""
+
+#: core/templates/auth/login.html:15
+msgid "Click to Reset It"
+msgstr ""
+
+#: core/templates/auth/reset_password.html:5
+msgid "Reset Your Password"
+msgstr ""
+
+#: core/templates/errors/404.html:4
+msgid "Not Found"
+msgstr ""
+
+#: core/templates/errors/404.html:5 core/templates/errors/500.html:6
+msgid "Back"
+msgstr ""
+
+#: core/templates/errors/500.html:4
+msgid "An unexpected error has occurred"
+msgstr ""
+
+#: core/templates/errors/500.html:5
+msgid "The administrator has been notified. Sorry for the inconvenience!"
+msgstr ""
+
+#: core/templates/home/index.html:5
+#, python-format
+msgid "Hi, %(username)s!"
+msgstr ""
+
+#: core/templates/home/index.html:17 core/templates/home/user.html:66
+msgid "Newer posts"
+msgstr ""
+
+#: core/templates/home/index.html:22 core/templates/home/user.html:71
+msgid "Older posts"
+msgstr ""
+
+#: core/templates/home/user.html:8
+msgid "User"
+msgstr ""
+
+#: core/templates/home/user.html:20
+msgid "Edit your profile"
+msgstr ""
+
+#: core/templates/home/user.html:27
+msgid "Export your posts"
+msgstr ""
+
+#: core/templates/home/user.html:51
+msgid "Send private message"
+msgstr ""
+
+#: core/templates/includes/_post.html:17
+#, python-format
+msgid "%(username)s said %(when)s"
+msgstr ""
+
+#: core/templates/includes/_post.html:30
+msgid "Translate"
+msgstr ""
+
+#: core/utils/extensions.py:16
+msgid "Please log in to access this page."
+msgstr ""
+
