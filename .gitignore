@@ -1,8 +1,10 @@
 venv/*
 .idea/*
-.env
+.env*
 *.pyc
-app.db
+*.db
 messages.pot
 .vscode/*
 logs/*
+index.py
+scrapyard/

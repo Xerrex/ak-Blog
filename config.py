@@ -1,5 +1,6 @@
 import os
 
+
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 
@@ -19,8 +20,7 @@ class Config(object):
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
 
-    # change line to add more Emails of admins.
-    ADMINS = os.environ.get('ADMINS')
+    ADMINS = os.environ.get('ADMINS').split(" ")
 
     # uncomment after getting Key
     # MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')
@@ -28,25 +28,36 @@ class Config(object):
     POSTS_PER_PAGE = 25
 
     LANGUAGES = ['en', 'es']
+    ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
+    REDIS_URL = os.environ.get('REDIS_URL') or 'redis://redis:6397/0'
+    LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
 
 
-class ProductionEnv(Config):
-    ENV = 'production'
-
-
-class DevelopmentEnv(Config):
-    DEBUG = True
-
-
-class TestingEnv(Config):
-    TESTING = True
+class ProdConfig(Config):
+    """Production configurations
+    """
+    
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
                               'sqlite:///' + os.path.join(basedir, 'app.db')
 
 
-configs_env = {
-    'production': ProductionEnv,
-    'development': DevelopmentEnv,
-    'testing': TestingEnv
-}
+class DevConfig(Config):
+    """Develpment configurations
+    """
 
+    DEBUG = True
+
+
+class TestingConfig(Config):
+    """Testing Configurations
+    """
+
+    TESTING = True
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app_testing.db')
+
+
+env_configs = {
+    'prod': ProdConfig,
+    'dev': DevConfig,
+    'testing': TestingConfig
+}
