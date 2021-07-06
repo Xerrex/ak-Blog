@@ -21,6 +21,8 @@ guess-language-spirit = "==0.5.3"
 elasticsearch = "==7.13.1"
 rq = "==1.9.0"
 requests = "==2.25.1"
+gunicorn = "*"
+psycopg2-binary = "*"
 
 [requires]
 python_version = "3.8"

@@ -30,6 +30,7 @@ class Config(object):
     LANGUAGES = ['en', 'es']
     ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
     REDIS_URL = os.environ.get('REDIS_URL') or 'redis://redis:6397/0'
+    LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
 
 
 class ProdConfig(Config):
