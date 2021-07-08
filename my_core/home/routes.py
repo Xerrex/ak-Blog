@@ -140,15 +140,16 @@ def explore():
                            next_url=next_url, prev_url=prev_url)
 
 
-# @home_bp.route('/translate', methods=['POST'])
-# @login_required
-# def translate_text():
-#     return jsonify({
-#         'text': translate(
-#             request.form['text'],
-#             request.form['source_language'],
-#             request.form['dest_language']
-#     )})
+@home_bp.route('/translate', methods=['POST'])
+@login_required
+def translate_text():
+    return jsonify({
+        'text': translate(
+            request.form['text'],
+            request.form['source_language'],
+            request.form['dest_language']
+    )})
+
 
 @home_bp.route('/search')
 @login_required
@@ -224,13 +225,14 @@ def notifications():
     } for n in notifications])
 
 
-# TODO: uncomment for local dev enviroment: disabled for Heroku deployment
-# @home_bp.route('/export_posts')
-# @login_required
-# def export_posts():
-#     if current_user.get_task_in_progress('export_posts'):
-#         flash(_('An export task is currently in progress'))
-#     else:
-#         current_user.launch_task('export_posts', _('Exporting posts...'))
-#         db.session.commit()
-#     return redirect(url_for('home.user', username=current_user.username))
+@home_bp.route('/export_posts')
+@login_required
+def export_posts():
+
+    # TODO:Configuring redis in production
+    # if current_user.get_task_in_progress('export_posts'):
+    #     flash(_('An export task is currently in progress'))
+    # else:
+    #     current_user.launch_task('export_posts', _('Exporting posts...'))
+    #     db.session.commit()
+    return redirect(url_for('home.user', username=current_user.username))
